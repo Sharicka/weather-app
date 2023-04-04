@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App Wireframe</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/97a15d7e88.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,900;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/sunset.jpg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<div class="container">
+  <form id="search-form">
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <input type="search" class="form-control" placeholder="Search City" autofocus="on" autocomplete="off"
+            id="city-input" />
+        </div>
+      </div>
+    </div>
+  </form>
+    <button id="current-location-button" type="submit" class="btn">Current Location</button>
+  <h1 id="current-city">Kingston, JA</h1>
+  <span id="date-time">Thursday 4:04pm</span>
+  <br>
+  <span class="temp-description" id="temperature-description">Partly Cloudy</span>
+  <div class="right-side-info">
+    <i class="fa-solid fa-cloud-sun cloud-icon"></i>
+    <h2 id="temperature">28 </h2><span class="units"><a href="#" id="celcius-link">°C</a> | <a href="#"
+        id="fahrenheit-link">°F</a></span>
+  </div>
+
+  <div class="details">
+    Precipitation: %
+    <br>
+    Humidity: <span id="humidity">59</span>%
+    <br>
+    Wind: <span id="wind">45</span>km/h
+  </div>
+  <div class="other-details">
+    <span>Temperature</span>
+    |
+    <span>Precipitation</span>
+    |
+    <span>Wind</span>
+  </div>
+
+  <div class="row">
+    <div class="col time">3pm</div>
+    <div class="col time">6pm</div>
+    <div class="col time">9pm</div>
+    <div class="col time">12am</div>
+    <div class="col time">3am</div>
+    <div class="col time">6am</div>
+    <div class="col time">9am</div>
+    <div class="col time">12pm</div>
+  </div>
+
+  <div class="row">
+    <div class="col"> <i class="fa-solid fa-cloud-sun weather-icon"></i></div>
+    <div class="col"><i class="fa-solid fa-sun weather-icon"></i></div>
+    <div class="col"><i class="fa-solid fa-cloud-sun weather-icon"></i></div>
+    <div class="col"><i class="fa-solid fa-cloud-sun weather-icon"></i></div>
+    <div class="col"><i class="fa-solid fa-cloud-sun-rain weather-icon"></i></div>
+    <div class="col"><i class="fa-solid fa-cloud-rain weather-icon"></i></div>
+    <div class="col"><i class="fa-solid fa-cloud-rain weather-icon"></i></div>
+    <div class="col"><i class="fa-solid fa-cloud-sun weather-icon"></i></div>
+  </div>
+
+  <p>
+  <div class="row">
+    <div class="col day">Thurs</div>
+    <div class="col day">Fri</div>
+    <div class="col day">Sat</div>
+    <div class="col day">Sun</div>
+    <div class="col day">Mon</div>
+    <div class="col day">Tues</div>
+    <div class="col day">Wed</div>
+    <div class="col day">Thurs</div>
+
+  </div>
+  <div class="row">
+    <div class="col temp">21° 19°</div>
+    <div class="col temp">29° 21°</div>
+    <div class="col temp">29° 20°</div>
+    <div class="col temp">30° 21°</div>
+    <div class="col temp">28° 21°</div>
+    <div class="col temp">28° 21°</div>
+    <div class="col temp">29° 20°</div>
+    <div class="col temp">19° 16°</div>
+  </div>
+  </p>
+</div>
+
+<footer>Coded by <strong>Sharicka Clarke</strong></footer>
+
+<script src="src/index.js"></script>
+
+</body>
+
+</html>

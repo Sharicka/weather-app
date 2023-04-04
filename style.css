@@ -1,0 +1,105 @@
+body {
+  background-image: url(src/sunset.jpg);
+  background-size: cover;
+  zoom: 90%;
+  padding-top: 50px;
+}
+
+h1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 800;
+}
+
+h2,
+.units {
+  color: #ffff;
+}
+
+span {
+  color: #d9d7d7;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+}
+
+.temp-description {
+  text-transform: capitalize;
+}
+
+.card {
+  border-width: 20px;
+}
+
+.form-group {
+  padding-top: 10px;
+}
+
+.details {
+  color: #ffff;
+  position: relative;
+  bottom: 365px;
+  left: 480px;
+  font-family: "PT Mono", monospace;
+  font-weight: 800;
+}
+
+.right-side-info {
+  position: relative;
+  padding: 5px;
+  bottom: 210px;
+  left: 640px;
+}
+
+.cloud-icon {
+  color: #6cb8d8;
+  font-size: 100px;
+}
+
+.other-details {
+  position: relative;
+  bottom: 200px;
+  font-weight: 600;
+  color: #ffff;
+}
+
+.weather-icon {
+  font-size: 40px;
+  color: #6cb8d8;
+}
+
+.day,
+.time {
+  font-weight: 800;
+  color: #d9d7d7;
+  font-family: "PT Mono", monospace;
+}
+
+.temp {
+  color: #d9d7d7;
+}
+
+.container {
+  margin: 60px auto;
+  padding: 30px 70px;
+  max-width: 900px;
+  border: outset;
+  background-size: cover;
+  border-radius: 30px;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0 20px 10px rgb(0 0 0 0.3);
+}
+
+footer {
+  text-align: center;
+  color: #ffffff;
+}
+
+.btn {
+  background-color: #6cb8d8;
+  color: #000;
+  margin: -10px 0 10px;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
