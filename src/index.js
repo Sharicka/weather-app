@@ -54,7 +54,7 @@ let position = document.querySelector("#search-form");
 position.addEventListener(`submit`, showPosition);
 console.log(position);
 
-function showPosition(city) {
+function showPosition() {
   let city = document.querySelector(`#city-input`);
   let currentCity = city.value;
   let h1 = document.querySelector(`h1`);
@@ -84,8 +84,6 @@ function handleLocation(event) {
 navigator.geolocation.getCurrentPosition(searchCurrentLocation);
 let currentLocationButton = document.querySelector(`#current-location-button`);
 currentLocationButton.addEventListener(`click`, handleLocation);
-
-showPosition("San Francisco");
 
 function convertToFahrenheit(event) {
   event.preventDefault();
