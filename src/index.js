@@ -33,24 +33,6 @@ function search(event) {
 let form = document.querySelector(`#search-form`);
 form.addEventListener(`submit`, search);
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(`#temperature`);
-  temperatureElement.innerHTML = 82;
-}
-
-function convertToCelcius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(`#temperature`);
-  temperatureElement.innerHTML = 28;
-}
-
-let fahrenheitLink = document.querySelector(`#fahrenheit-link`);
-fahrenheitLink.addEventListener(`click`, convertToFahrenheit);
-
-let celciusLink = document.querySelector(`#celcius-link`);
-celciusLink.addEventListener(`click`, convertToCelcius);
-
 function showTemperature(response) {
   console.log(response.data);
   document.querySelector(`#current-city`).innerHTML = response.data.name;
@@ -72,7 +54,7 @@ let position = document.querySelector("#search-form");
 position.addEventListener(`submit`, showPosition);
 console.log(position);
 
-function showPosition() {
+function showPosition(city) {
   let city = document.querySelector(`#city-input`);
   let currentCity = city.value;
   let h1 = document.querySelector(`h1`);
@@ -102,3 +84,23 @@ function handleLocation(event) {
 navigator.geolocation.getCurrentPosition(searchCurrentLocation);
 let currentLocationButton = document.querySelector(`#current-location-button`);
 currentLocationButton.addEventListener(`click`, handleLocation);
+
+showPosition("San Francisco");
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(`#temperature`);
+  temperatureElement.innerHTML = 82;
+}
+
+function convertToCelcius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(`#temperature`);
+  temperatureElement.innerHTML = 28;
+}
+
+let fahrenheitLink = document.querySelector(`#fahrenheit-link`);
+fahrenheitLink.addEventListener(`click`, convertToFahrenheit);
+
+let celciusLink = document.querySelector(`#celcius-link`);
+celciusLink.addEventListener(`click`, convertToCelcius);
