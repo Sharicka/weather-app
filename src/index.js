@@ -33,6 +33,24 @@ function search(event) {
 let form = document.querySelector(`#search-form`);
 form.addEventListener(`submit`, search);
 
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(`#temperature`);
+  temperatureElement.innerHTML = 82;
+}
+
+function convertToCelcius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(`#temperature`);
+  temperatureElement.innerHTML = 28;
+}
+
+let fahrenheitLink = document.querySelector(`#fahrenheit-link`);
+fahrenheitLink.addEventListener(`click`, convertToFahrenheit);
+
+let celciusLink = document.querySelector(`#celcius-link`);
+celciusLink.addEventListener(`click`, convertToCelcius);
+
 function showTemperature(response) {
   console.log(response.data);
   document.querySelector(`#current-city`).innerHTML = response.data.name;

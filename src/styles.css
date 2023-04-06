@@ -1,7 +1,6 @@
 body {
   background-image: url(src/sunset.jpg);
-  background-size: cover;
-  zoom: 90%;
+  zoom: 75%;
   padding-top: 50px;
 }
 
@@ -11,7 +10,9 @@ h1 {
 }
 
 h2,
-.units {
+.units,
+#wind,
+#humidity {
   color: #ffff;
 }
 
@@ -54,13 +55,6 @@ span {
   font-size: 100px;
 }
 
-.other-details {
-  position: relative;
-  bottom: 200px;
-  font-weight: 600;
-  color: #ffff;
-}
-
 .weather-icon {
   font-size: 40px;
   color: #6cb8d8;
@@ -78,6 +72,7 @@ span {
 }
 
 .container {
+  background-color: #4d94b3;
   margin: 60px auto;
   padding: 30px 70px;
   max-width: 900px;
@@ -90,7 +85,7 @@ span {
 
 footer {
   text-align: center;
-  color: #ffffff;
+  color: #040b25;
 }
 
 .btn {
