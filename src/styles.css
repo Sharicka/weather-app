@@ -16,6 +16,11 @@ h2,
   color: #ffff;
 }
 
+.active {
+  color: #ffff;
+  cursor: default;
+}
+
 span {
   color: #d9d7d7;
   font-weight: 700;
@@ -97,4 +102,8 @@ footer {
 .btn:hover {
   background-color: transparent;
   color: #ffffff;
+}
+
+.active:hover {
+  text-decoration: none;
 }
