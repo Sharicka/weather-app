@@ -23,18 +23,28 @@ let day = days[now.getDay()];
 let currentDay = document.querySelector("#date-time");
 currentDay.innerHTML = `${day} ${hours}: ${minutes}`;
 
+function localSearch(city) {
+  let apiKey = `343ec7763db033ffad6d357c813c9941`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&&units=metric`;
+
+  axios.get(apiUrl).then(showTemperature);
+}
+
 function search(event) {
   event.preventDefault();
-  let searchCity = document.querySelector(`#city-input`);
-  let city = document.querySelector(`#current-city`);
-  city.innerHTML = `${searchCity.value}`;
+  let city = document.querySelector(`#city-input`).value;
+
+  localSearch(city);
 }
+
+let kingston = document.querySelector(`#current-city`);
+let cityInput = document.querySelector("#city-input");
+kingston.innerHTML = cityInput.value;
 
 let form = document.querySelector(`#search-form`);
 form.addEventListener(`submit`, search);
 
 function showTemperature(response) {
-  console.log(response.data);
   document.querySelector(`#current-city`).innerHTML = response.data.name;
 
   document.querySelector("#temperature").innerHTML =
@@ -47,27 +57,23 @@ function showTemperature(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
   celsiusTemperature = response.data.main.temp;
 }
 
 let position = document.querySelector("#search-form");
-position.addEventListener(`submit`, showPosition);
+position.addEventListener(`submit`, localSearch);
 console.log(position);
 
-function showPosition() {
-  let city = document.querySelector(`#city-input`);
-  let currentCity = city.value;
-  let h1 = document.querySelector(`h1`);
-  h1.innerHTML = currentCity;
-  let apiKey = `343ec7763db033ffad6d357c813c9941`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=${apiKey}&&units=metric`;
-
-  axios.get(apiUrl).then(showTemperature);
-}
-
 function searchCurrentLocation(position) {
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
   let lon = position.coords.longitude;
   let lat = position.coords.latitude;
   let apiKey = `343ec7763db033ffad6d357c813c9941`;
@@ -96,6 +102,8 @@ function convertToFahrenheit(event) {
 
 function convertToCelsius(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector(`#temperature`);
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
@@ -107,3 +115,5 @@ fahrenheitLink.addEventListener(`click`, convertToFahrenheit);
 
 let celsiusLink = document.querySelector(`#celsius-link`);
 celsiusLink.addEventListener(`click`, convertToCelsius);
+
+localSearch("Kingston");
